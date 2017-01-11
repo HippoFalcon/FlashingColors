@@ -1,5 +1,5 @@
 //amount of balls per array
-var N = 50;
+var N = 100;
 
 //array names
 var B1;
@@ -21,8 +21,8 @@ function setup() {
 }
 
 function draw() {
-  //frameRate(30);
-  background(  0 ,mouseY*.5 ,mouseX*.5 , 75 );
+  frameRate(50);
+  background( random(mouseX*.3,mouseY*.3) ,mouseY*.5 ,mouseX*.5 , 75 );
   
   //for-loop to create the arrays
   for ( n = 0 ; n < N ; n++ ){
@@ -46,7 +46,7 @@ var Ball = function(){
     //direction (randomized)
   this.v = p5.Vector.random2D();
     //speed
-  this.v.mult( 10 );
+  this.v.mult( random(1,10) );
   
   //new function-anything told to evolveDraw will follow these instructions
   this.evolveDraw =function() {
@@ -60,7 +60,7 @@ var Ball = function(){
     if ( this.pos.y >= height || this.pos.y <= 0 ){
       this.v.y *=-1;
     }
-    var r = random(mouseX,mouseY);
+    var r = random(mouseX*.3,mouseY*.3);
     var g = random(mouseY*.5,this.pos.y+100);
     var b = random(mouseX*.5,this.pos.x+100);
     //create ellipse
