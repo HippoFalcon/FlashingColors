@@ -1,5 +1,5 @@
 //amount of balls per array
-var N = 100;
+var N = 10;
 
 //array names
 var B1;
@@ -22,7 +22,7 @@ function setup() {
 
 function draw() {
   frameRate(50);
-  background( random(mouseX*.3,mouseY*.3) ,mouseY*.5 ,mouseX*.5 , 75 );
+  //background( random(mouseX*.3,mouseY*.3) ,mouseY*.5 ,mouseX*.5 , 75 );
   
   //for-loop to create the arrays
   for ( n = 0 ; n < N ; n++ ){
